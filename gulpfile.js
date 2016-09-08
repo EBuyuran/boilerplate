@@ -112,7 +112,7 @@ gulp.task('uncss', function () {
 
 gulp.task("final", ["compress-html", "uncss", "minify-css", "uglify-js"]);
 
-gulp.task("watch", ["browserSync", "pug", "sass", "concat"], function(){
+gulp.task("go", ["browserSync", "pug", "sass", "concat"], function(){
 
 	gulp.watch("input/**/*.pug", ["pug"]);
 	gulp.watch("input/style/**/*.+(scss|sass)", ["sass"]);

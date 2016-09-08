@@ -1,0 +1,38 @@
+doctype html
+
+html(lang="en")
+
+	head
+
+		title Welcome to pug!
+		meta(charset="utf-8")
+		link(rel="stylesheet" href="/style/main.css")
+
+	body
+
+		include puglib/header.pug
+
+		ul
+
+			li Salt
+			li Sugar
+			li Pepper
+
+		h5.styled
+
+			span#test1 Test 1
+			span#test2 Test 2
+
+		.block Red Box
+
+		p.small.
+
+			Loren ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo porta augue, quis suscipit dolor hendrerit sit amet. Mauris eu lorem ut magna maximus accumsan.
+
+		svg.customizedvector
+
+			use(xlink:href="/img/sprite.svg#blocked")
+
+		include puglib/footer.pug
+
+		script(src="/script/main.js")
