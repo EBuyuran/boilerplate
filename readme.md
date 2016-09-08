@@ -12,9 +12,3 @@ Add plugins and run them on sample page.
 Redirect oldbrowsers to a static page.
 
 Image optimization.
-
-HTML5 Shiv.
-
-Add media query combiner.
-
-Order gulp final.

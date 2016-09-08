@@ -1,2 +1,2 @@
 
-document.getElementById("test1").innerHTML = "My concat test ";
+document.getElementById("test1").innerHTML = "Things are looking up.";

@@ -10,6 +10,7 @@ var cleanCSS = require("gulp-clean-css");
 var uglify = require("gulp-uglify");
 var pump = require("pump");
 var uncss = require("gulp-uncss");
+var combineMq = require("gulp-combine-mq");
 
 
 
@@ -43,7 +44,7 @@ gulp.task("sass", function() {
 // http://localhost:3000/source/
 // /input/style/
 
-gulp.task("pug", function () {
+gulp.task("pug", function() {
 
 	return gulp.src("input/*.pug")
 
@@ -57,7 +58,7 @@ gulp.task("pug", function () {
 
 });
 
-gulp.task("compress-html", function () {
+gulp.task("compress", function() {
 
 	return gulp.src("input/*.pug")
 
@@ -66,7 +67,7 @@ gulp.task("compress-html", function () {
 
 });
 
-gulp.task("concat", function () {
+gulp.task("concat", function() {
 
 	return gulp.src("input/script/*.js")
 
@@ -78,16 +79,7 @@ gulp.task("concat", function () {
 
 });
 
-gulp.task("minify-css", function () {
-
-	return gulp.src("output/style/*.css")
-
-		.pipe(cleanCSS())
-		.pipe(gulp.dest("output/style/"))
-
-});
-
-gulp.task("uglify-js", function (cb) {
+gulp.task("uglify", function(cb) {
 
 	pump([
 		gulp.src("output/script/*.js"),
@@ -99,7 +91,19 @@ gulp.task("uglify-js", function (cb) {
 
 });
 
-gulp.task('uncss', function () {
+gulp.task("combine", function () {
+
+	return gulp.src("output/style/*.css")
+
+		.pipe(combineMq({
+			beautify: true
+		}))
+
+		.pipe(gulp.dest("output/style/"));
+
+});
+
+gulp.task('uncss', function() {
 
 	return gulp.src("output/style/*.css")
 
@@ -110,7 +114,21 @@ gulp.task('uncss', function () {
 
 });
 
-gulp.task("final", ["compress-html", "uncss", "minify-css", "uglify-js"]);
+gulp.task("minify", function() {
+
+	return gulp.src("output/style/*.css")
+
+		.pipe(cleanCSS())
+		.pipe(gulp.dest("output/style/"))
+
+});
+
+/*
+	CSS Compiling Order
+	gulp uncss, gulp combine, gulp minify
+*/
+
+gulp.task("final", ["compress", "uglify"]);
 
 gulp.task("go", ["browserSync", "pug", "sass", "concat"], function(){
 

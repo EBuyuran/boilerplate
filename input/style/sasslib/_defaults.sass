@@ -2,9 +2,14 @@
 
 //
 	Media Queries
+	Compiles in the same order as declared here by the combiner plugin.
 
-	=example
-		@media (max-width: 1200px)
+	=sm
+		@media (min-width: 800px)
+			@content
+
+	=md
+		@media (min-width: 1200px)
 			@content
 
 
@@ -14,7 +19,7 @@
 	@font-face
 
 		:font-family ""
-		:src url("/style/font/.woff2") format("woff2"), url("/style/font/.woff") format("woff")
+		:src url("font/.woff2") format("woff2"), url("font/.woff") format("woff")
 
 //
 	Colours
