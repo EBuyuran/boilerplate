@@ -8,7 +8,11 @@ Add plugins and run them on sample page.
 * Smooth Scroll
 * Lazy Load
 * Sumoselect
+* Modernizr
+* Mask for specified input
 
-Redirect oldbrowsers to a static page.
+Design static redirect page for old browsers.
 
 Image optimization.
+
+Add generic CSS values.
