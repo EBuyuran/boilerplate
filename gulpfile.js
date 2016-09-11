@@ -14,6 +14,7 @@ var combineMq = require("gulp-combine-mq");
 var imagemin = require("gulp-imagemin");
 var cache = require("gulp-cache");
 var tinify = require("gulp-tinify");
+var runSequence = require("run-sequence");
 
 
 
@@ -126,11 +127,6 @@ gulp.task("minify", function() {
 
 });
 
-/*
-	CSS Compiling Order
-	gulp uncss, gulp combine, gulp minify
-*/
-
 gulp.task("optimise", function(){
 
 	return gulp.src("output/img/**/*.+(png|jpg|jpeg|gif)")
@@ -142,6 +138,7 @@ gulp.task("optimise", function(){
 	})))
 
 	.pipe(gulp.dest("output/img/"))
+
 });
 
 gulp.task("tinify", function(){
@@ -153,7 +150,15 @@ gulp.task("tinify", function(){
 
 });
 
-gulp.task("final", ["compress", "uglify", "optimise"]);
+
+
+
+
+gulp.task("final", function(callback) {
+
+	runSequence("uncss", "combine", "minify", ["compress", "uglify"], callback);
+
+});
 
 gulp.task("go", ["browserSync", "pug", "sass", "concat"], function(){
 
