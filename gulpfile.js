@@ -11,6 +11,9 @@ var uglify = require("gulp-uglify");
 var pump = require("pump");
 var uncss = require("gulp-uncss");
 var combineMq = require("gulp-combine-mq");
+var imagemin = require("gulp-imagemin");
+var cache = require("gulp-cache");
+var tinify = require("gulp-tinify");
 
 
 
@@ -128,7 +131,29 @@ gulp.task("minify", function() {
 	gulp uncss, gulp combine, gulp minify
 */
 
-gulp.task("final", ["compress", "uglify"]);
+gulp.task("optimise", function(){
+
+	return gulp.src("output/img/**/*.+(png|jpg|jpeg|gif)")
+
+	// Caching images that ran through imagemin
+
+	.pipe(cache(imagemin({
+		interlaced: true
+	})))
+
+	.pipe(gulp.dest("output/img/"))
+});
+
+gulp.task("tinify", function(){
+
+	return gulp.src("output/img/**/*.+(png|jpg|jpeg)")
+
+	.pipe(cache(tinify("87P5426kKBE9JTn3dUXTvvF7o5-eoSzF")))
+	.pipe(gulp.dest("output/img/"))
+
+});
+
+gulp.task("final", ["compress", "uglify", "optimise"]);
 
 gulp.task("go", ["browserSync", "pug", "sass", "concat"], function(){
 

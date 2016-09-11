@@ -6,7 +6,9 @@ html(lang="en")
 
 		title Welcome to pug!
 		meta(charset="utf-8")
-		link(rel="stylesheet" href="/style/main.css")
+		link(rel="stylesheet" href="style/main.css")
+		script(src="script/outdatedbrowser.js")
+		script(src="script/jquery.js")
 
 	body
 
@@ -26,12 +28,33 @@ html(lang="en")
 
 		p.small.
 
-			Loren ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo porta augue, quis suscipit dolor hendrerit sit amet. Mauris eu lorem ut magna maximus accumsan.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo porta augue, quis suscipit dolor hendrerit sit amet. Mauris eu lorem ut magna maximus accumsan.
 
 		svg.customizedvector
 
 			use(xlink:href="/img/sprite.svg#blocked")
 
+
+		script.
+
+			$(document).ready(function() {
+				window.test = $('.testsel').SumoSelect({okCancelInMulti:true, selectAll:true });
+			});
+
+		<select multiple="multiple" placeholder="Placeholder Text" class="testsel">
+			<option selected value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="mercedes">Mercedes</option>
+			<option value="audi">Audi</option>
+			<option value="bmw">BMW</option>
+		</select>
+
 		include puglib/footer.pug
 
-		script(src="/script/main.js")
+		#outdated
+
+			h6 Your browser is out-of-date!
+			p Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now!</a>
+			p.last <a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a>
+
+		script(src="script/main.js")
