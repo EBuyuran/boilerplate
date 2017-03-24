@@ -19,7 +19,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body
 
-	margin: 100px
+	margin: 100px 0
 
 	color: $primary-text-colour
 
@@ -68,8 +68,8 @@ h6
 
 p
 
-	line-height: 1.25em
-	margin: 1.4em 0
+	line-height: 1.35em
+	margin: 1.5em 0
 
 a
 
@@ -189,8 +189,733 @@ table
 	display: table
 	clear: both
 
+
+
 //	Page Layouts
 
-.row
+.fx 	// Fixed Container
 
-.container
+	width: 100%
+	margin: auto
+
+	+sm
+
+		width: ($screen-small - 100px)
+
+	+md
+
+		width: ($screen-medium - 100px)
+
+	+lg
+
+		width: ($screen-large - 100px)
+
+.fl 	// Fluid Container
+
+	width: 100%
+
+.row:after
+
+	content: ""
+	display: table
+	clear: both
+
+.block
+
+	float: left
+
+
+
+
+
+
+
+
+
+.s1
+
+	width: 100%
+
+	+sm
+
+		width: 8.33%
+
+.s2
+
+	width: 100%
+
+	+sm
+
+		width: 16.66%
+
+.s3
+
+	width: 100%
+
+	+sm
+
+		width: 25%
+
+.s4
+
+	width: 100%
+
+	+sm
+
+		width: 33.33%
+
+.s5
+
+	width: 100%
+
+	+sm
+
+		width: 41.66%
+
+.s6
+
+	width: 100%
+
+	+sm
+
+		width: 50%
+
+.s7
+
+	width: 100%
+
+	+sm
+
+		width: 58.33%
+
+.s8
+
+	width: 100%
+
+	+sm
+
+		width: 66.66%
+
+.s9
+
+	width: 100%
+
+	+sm
+
+		width: 75%
+
+.s10
+
+	width: 100%
+
+	+sm
+
+		width: 83.33%
+
+.s11
+
+	width: 100%
+
+	+sm
+
+		width: 91.66%
+
+.s12
+
+	width: 100%
+
+	+sm
+
+		width: 100%
+
+
+
+
+
+
+
+
+
+.m1
+
+	+md
+
+		width: 8.33%
+
+.m2
+
+	+md
+
+		width: 16.66%
+
+.m3
+
+	+md
+
+		width: 25%
+
+.m4
+
+	+md
+
+		width: 33.33%
+
+.m5
+
+	+md
+
+		width: 41.66%
+
+.m6
+
+	+md
+
+		width: 50%
+
+.m7
+
+	+md
+
+		width: 58.33%
+
+.m8
+
+	+md
+
+		width: 66.66%
+
+.m9
+
+	+md
+
+		width: 75%
+
+.m10
+
+	+md
+	
+	width: 83.33%
+
+.m11
+
+	+md
+	
+	width: 91.66%
+
+.m12
+
+	+md
+	
+	width: 100%
+
+
+
+
+
+
+
+
+
+.l1
+
+	+lg
+
+		width: 8.33%
+
+.l2
+
+	+lg
+
+		width: 16.66%
+
+.l3
+
+	+lg
+
+		width: 25%
+
+.l4
+
+	+lg
+
+		width: 33.33%
+
+.l5
+
+	+lg
+
+		width: 41.66%
+
+.l6
+
+	+lg
+
+		width: 50%
+
+.l7
+
+	+lg
+
+		width: 58.33%
+
+.l8
+
+	+lg
+
+		width: 66.66%
+
+.l9
+
+	+lg
+
+		width: 75%
+
+.l10
+
+	+lg
+	
+	width: 83.33%
+
+.l11
+
+	+lg
+	
+	width: 91.66%
+
+.l12
+
+	+lg
+	
+	width: 100%
+
+
+
+
+
+
+
+
+
+.s1-left
+
+	+sm
+
+		padding-left: 8.33%
+
+.s2-left
+
+	+sm
+
+		padding-left: 16.66%
+
+.s3-left
+
+	+sm
+
+		padding-left: 25%
+
+.s4-left
+
+	+sm
+
+		padding-left: 33.33%
+
+.s5-left
+
+	+sm
+
+		padding-left: 41.66%
+
+.s6-left
+
+	+sm
+
+		padding-left: 50%
+
+.s7-left
+
+	+sm
+
+		padding-left: 58.33%
+
+.s8-left
+
+	+sm
+
+		padding-left: 66.66%
+
+.s9-left
+
+	+sm
+
+		padding-left: 75%
+
+.s10-left
+
+	+sm
+
+		padding-left: 83.33%
+
+.s11-left
+
+	+sm
+
+		padding-left: 91.66%
+
+.s1-right
+
+	+sm
+
+		padding-right: 8.33%
+
+.s2-right
+
+	+sm
+
+		padding-right: 16.66%
+
+.s3-right
+
+	+sm
+
+		padding-right: 25%
+
+.s4-right
+
+	+sm
+
+		padding-right: 33.33%
+
+.s5-right
+
+	+sm
+
+		padding-right: 41.66%
+
+.s6-right
+
+	+sm
+
+		padding-right: 50%
+
+.s7-right
+
+	+sm
+
+		padding-right: 58.33%
+
+.s8-right
+
+	+sm
+
+		padding-right: 66.66%
+
+.s9-right
+
+	+sm
+
+		padding-right: 75%
+
+.s10-right
+
+	+sm
+
+		padding-right: 83.33%
+
+.s11-right
+
+	+sm
+
+		padding-right: 91.66%
+
+
+
+
+
+
+
+
+
+.m0-left
+
+	+md
+
+		padding-left: 0
+
+.m1-left
+
+	+md
+
+		padding-left: 8.33%
+
+.m2-left
+
+	+md
+
+		padding-left: 16.66%
+
+.m3-left
+
+	+md
+
+		padding-left: 25%
+
+.m4-left
+
+	+md
+
+		padding-left: 33.33%
+
+.m5-left
+
+	+md
+
+		padding-left: 41.66%
+
+.m6-left
+
+	+md
+
+		padding-left: 50%
+
+.m7-left
+
+	+md
+
+		padding-left: 58.33%
+
+.m8-left
+
+	+md
+
+		padding-left: 66.66%
+
+.m9-left
+
+	+md
+
+		padding-left: 75%
+
+.m10-left
+
+	+md
+
+		padding-left: 83.33%
+
+.m11-left
+
+	+md
+
+		padding-left: 91.66%
+
+.m1-right
+
+	+md
+
+		padding-right: 8.33%
+
+.m2-right
+
+	+md
+
+		padding-right: 16.66%
+
+.m3-right
+
+	+md
+
+		padding-right: 25%
+
+.m4-right
+
+	+md
+
+		padding-right: 33.33%
+
+.m5-right
+
+	+md
+
+		padding-right: 41.66%
+
+.m6-right
+
+	+md
+
+		padding-right: 50%
+
+.m7-right
+
+	+md
+
+		padding-right: 58.33%
+
+.m8-right
+
+	+md
+
+		padding-right: 66.66%
+
+.m9-right
+
+	+md
+
+		padding-right: 75%
+
+.m10-right
+
+	+md
+
+		padding-right: 83.33%
+
+.m11-right
+
+	+md
+
+		padding-right: 91.66%
+
+
+
+
+
+
+
+
+
+.l0-left
+
+	+lg
+
+		padding-left: 0
+
+.l1-left
+
+	+lg
+
+		padding-left: 8.33%
+
+.l2-left
+
+	+lg
+
+		padding-left: 16.66%
+
+.l3-left
+
+	+lg
+
+		padding-left: 25%
+
+.l4-left
+
+	+lg
+
+		padding-left: 33.33%
+
+.l5-left
+
+	+lg
+
+		padding-left: 41.66%
+
+.l6-left
+
+	+lg
+
+		padding-left: 50%
+
+.l7-left
+
+	+lg
+
+		padding-left: 58.33%
+
+.l8-left
+
+	+lg
+
+		padding-left: 66.66%
+
+.l9-left
+
+	+lg
+
+		padding-left: 75%
+
+.l10-left
+
+	+lg
+
+		padding-left: 83.33%
+
+.l11-left
+
+	+lg
+
+		padding-left: 91.66%
+
+.l1-right
+
+	+lg
+
+		padding-right: 8.33%
+
+.l2-right
+
+	+lg
+
+		padding-right: 16.66%
+
+.l3-right
+
+	+lg
+
+		padding-right: 25%
+
+.l4-right
+
+	+lg
+
+		padding-right: 33.33%
+
+.l5-right
+
+	+lg
+
+		padding-right: 41.66%
+
+.l6-right
+
+	+lg
+
+		padding-right: 50%
+
+.l7-right
+
+	+lg
+
+		padding-right: 58.33%
+
+.l8-right
+
+	+lg
+
+		padding-right: 66.66%
+
+.l9-right
+
+	+lg
+
+		padding-right: 75%
+
+.l10-right
+
+	+lg
+
+		padding-right: 83.33%
+
+.l11-right
+
+	+lg
+
+		padding-right: 91.66%

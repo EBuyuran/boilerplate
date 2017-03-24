@@ -14,7 +14,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  margin: 100px;
+  margin: 100px 0;
   color: #555;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -51,8 +51,8 @@ h6 {
   font-weight: 400; }
 
 p {
-  line-height: 1.25em;
-  margin: 1.4em 0; }
+  line-height: 1.35em;
+  margin: 1.5em 0; }
 
 a {
   color: #e20091;
@@ -143,5 +143,463 @@ table {
   content: "";
   display: table;
   clear: both; }
+
+.fx {
+  width: 100%;
+  margin: auto; }
+  @media (min-width: 640px) {
+    .fx {
+      width: 540px; } }
+  @media (min-width: 900px) {
+    .fx {
+      width: 800px; } }
+  @media (min-width: 1200px) {
+    .fx {
+      width: 1100px; } }
+
+.fl {
+  width: 100%; }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.block {
+  float: left; }
+
+.s1 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s1 {
+      width: 8.33%; } }
+
+.s2 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s2 {
+      width: 16.66%; } }
+
+.s3 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s3 {
+      width: 25%; } }
+
+.s4 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s4 {
+      width: 33.33%; } }
+
+.s5 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s5 {
+      width: 41.66%; } }
+
+.s6 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s6 {
+      width: 50%; } }
+
+.s7 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s7 {
+      width: 58.33%; } }
+
+.s8 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s8 {
+      width: 66.66%; } }
+
+.s9 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s9 {
+      width: 75%; } }
+
+.s10 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s10 {
+      width: 83.33%; } }
+
+.s11 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s11 {
+      width: 91.66%; } }
+
+.s12 {
+  width: 100%; }
+  @media (min-width: 640px) {
+    .s12 {
+      width: 100%; } }
+
+@media (min-width: 900px) {
+  .m1 {
+    width: 8.33%; } }
+
+@media (min-width: 900px) {
+  .m2 {
+    width: 16.66%; } }
+
+@media (min-width: 900px) {
+  .m3 {
+    width: 25%; } }
+
+@media (min-width: 900px) {
+  .m4 {
+    width: 33.33%; } }
+
+@media (min-width: 900px) {
+  .m5 {
+    width: 41.66%; } }
+
+@media (min-width: 900px) {
+  .m6 {
+    width: 50%; } }
+
+@media (min-width: 900px) {
+  .m7 {
+    width: 58.33%; } }
+
+@media (min-width: 900px) {
+  .m8 {
+    width: 66.66%; } }
+
+@media (min-width: 900px) {
+  .m9 {
+    width: 75%; } }
+
+.m10 {
+  width: 83.33%; }
+
+.m11 {
+  width: 91.66%; }
+
+.m12 {
+  width: 100%; }
+
+@media (min-width: 1200px) {
+  .l1 {
+    width: 8.33%; } }
+
+@media (min-width: 1200px) {
+  .l2 {
+    width: 16.66%; } }
+
+@media (min-width: 1200px) {
+  .l3 {
+    width: 25%; } }
+
+@media (min-width: 1200px) {
+  .l4 {
+    width: 33.33%; } }
+
+@media (min-width: 1200px) {
+  .l5 {
+    width: 41.66%; } }
+
+@media (min-width: 1200px) {
+  .l6 {
+    width: 50%; } }
+
+@media (min-width: 1200px) {
+  .l7 {
+    width: 58.33%; } }
+
+@media (min-width: 1200px) {
+  .l8 {
+    width: 66.66%; } }
+
+@media (min-width: 1200px) {
+  .l9 {
+    width: 75%; } }
+
+.l10 {
+  width: 83.33%; }
+
+.l11 {
+  width: 91.66%; }
+
+.l12 {
+  width: 100%; }
+
+@media (min-width: 640px) {
+  .s1-left {
+    padding-left: 8.33%; } }
+
+@media (min-width: 640px) {
+  .s2-left {
+    padding-left: 16.66%; } }
+
+@media (min-width: 640px) {
+  .s3-left {
+    padding-left: 25%; } }
+
+@media (min-width: 640px) {
+  .s4-left {
+    padding-left: 33.33%; } }
+
+@media (min-width: 640px) {
+  .s5-left {
+    padding-left: 41.66%; } }
+
+@media (min-width: 640px) {
+  .s6-left {
+    padding-left: 50%; } }
+
+@media (min-width: 640px) {
+  .s7-left {
+    padding-left: 58.33%; } }
+
+@media (min-width: 640px) {
+  .s8-left {
+    padding-left: 66.66%; } }
+
+@media (min-width: 640px) {
+  .s9-left {
+    padding-left: 75%; } }
+
+@media (min-width: 640px) {
+  .s10-left {
+    padding-left: 83.33%; } }
+
+@media (min-width: 640px) {
+  .s11-left {
+    padding-left: 91.66%; } }
+
+@media (min-width: 640px) {
+  .s1-right {
+    padding-right: 8.33%; } }
+
+@media (min-width: 640px) {
+  .s2-right {
+    padding-right: 16.66%; } }
+
+@media (min-width: 640px) {
+  .s3-right {
+    padding-right: 25%; } }
+
+@media (min-width: 640px) {
+  .s4-right {
+    padding-right: 33.33%; } }
+
+@media (min-width: 640px) {
+  .s5-right {
+    padding-right: 41.66%; } }
+
+@media (min-width: 640px) {
+  .s6-right {
+    padding-right: 50%; } }
+
+@media (min-width: 640px) {
+  .s7-right {
+    padding-right: 58.33%; } }
+
+@media (min-width: 640px) {
+  .s8-right {
+    padding-right: 66.66%; } }
+
+@media (min-width: 640px) {
+  .s9-right {
+    padding-right: 75%; } }
+
+@media (min-width: 640px) {
+  .s10-right {
+    padding-right: 83.33%; } }
+
+@media (min-width: 640px) {
+  .s11-right {
+    padding-right: 91.66%; } }
+
+@media (min-width: 900px) {
+  .m0-left {
+    padding-left: 0; } }
+
+@media (min-width: 900px) {
+  .m1-left {
+    padding-left: 8.33%; } }
+
+@media (min-width: 900px) {
+  .m2-left {
+    padding-left: 16.66%; } }
+
+@media (min-width: 900px) {
+  .m3-left {
+    padding-left: 25%; } }
+
+@media (min-width: 900px) {
+  .m4-left {
+    padding-left: 33.33%; } }
+
+@media (min-width: 900px) {
+  .m5-left {
+    padding-left: 41.66%; } }
+
+@media (min-width: 900px) {
+  .m6-left {
+    padding-left: 50%; } }
+
+@media (min-width: 900px) {
+  .m7-left {
+    padding-left: 58.33%; } }
+
+@media (min-width: 900px) {
+  .m8-left {
+    padding-left: 66.66%; } }
+
+@media (min-width: 900px) {
+  .m9-left {
+    padding-left: 75%; } }
+
+@media (min-width: 900px) {
+  .m10-left {
+    padding-left: 83.33%; } }
+
+@media (min-width: 900px) {
+  .m11-left {
+    padding-left: 91.66%; } }
+
+@media (min-width: 900px) {
+  .m1-right {
+    padding-right: 8.33%; } }
+
+@media (min-width: 900px) {
+  .m2-right {
+    padding-right: 16.66%; } }
+
+@media (min-width: 900px) {
+  .m3-right {
+    padding-right: 25%; } }
+
+@media (min-width: 900px) {
+  .m4-right {
+    padding-right: 33.33%; } }
+
+@media (min-width: 900px) {
+  .m5-right {
+    padding-right: 41.66%; } }
+
+@media (min-width: 900px) {
+  .m6-right {
+    padding-right: 50%; } }
+
+@media (min-width: 900px) {
+  .m7-right {
+    padding-right: 58.33%; } }
+
+@media (min-width: 900px) {
+  .m8-right {
+    padding-right: 66.66%; } }
+
+@media (min-width: 900px) {
+  .m9-right {
+    padding-right: 75%; } }
+
+@media (min-width: 900px) {
+  .m10-right {
+    padding-right: 83.33%; } }
+
+@media (min-width: 900px) {
+  .m11-right {
+    padding-right: 91.66%; } }
+
+@media (min-width: 1200px) {
+  .l0-left {
+    padding-left: 0; } }
+
+@media (min-width: 1200px) {
+  .l1-left {
+    padding-left: 8.33%; } }
+
+@media (min-width: 1200px) {
+  .l2-left {
+    padding-left: 16.66%; } }
+
+@media (min-width: 1200px) {
+  .l3-left {
+    padding-left: 25%; } }
+
+@media (min-width: 1200px) {
+  .l4-left {
+    padding-left: 33.33%; } }
+
+@media (min-width: 1200px) {
+  .l5-left {
+    padding-left: 41.66%; } }
+
+@media (min-width: 1200px) {
+  .l6-left {
+    padding-left: 50%; } }
+
+@media (min-width: 1200px) {
+  .l7-left {
+    padding-left: 58.33%; } }
+
+@media (min-width: 1200px) {
+  .l8-left {
+    padding-left: 66.66%; } }
+
+@media (min-width: 1200px) {
+  .l9-left {
+    padding-left: 75%; } }
+
+@media (min-width: 1200px) {
+  .l10-left {
+    padding-left: 83.33%; } }
+
+@media (min-width: 1200px) {
+  .l11-left {
+    padding-left: 91.66%; } }
+
+@media (min-width: 1200px) {
+  .l1-right {
+    padding-right: 8.33%; } }
+
+@media (min-width: 1200px) {
+  .l2-right {
+    padding-right: 16.66%; } }
+
+@media (min-width: 1200px) {
+  .l3-right {
+    padding-right: 25%; } }
+
+@media (min-width: 1200px) {
+  .l4-right {
+    padding-right: 33.33%; } }
+
+@media (min-width: 1200px) {
+  .l5-right {
+    padding-right: 41.66%; } }
+
+@media (min-width: 1200px) {
+  .l6-right {
+    padding-right: 50%; } }
+
+@media (min-width: 1200px) {
+  .l7-right {
+    padding-right: 58.33%; } }
+
+@media (min-width: 1200px) {
+  .l8-right {
+    padding-right: 66.66%; } }
+
+@media (min-width: 1200px) {
+  .l9-right {
+    padding-right: 75%; } }
+
+@media (min-width: 1200px) {
+  .l10-right {
+    padding-right: 83.33%; } }
+
+@media (min-width: 1200px) {
+  .l11-right {
+    padding-right: 91.66%; } }
 
 /*# sourceMappingURL=atf.css.map */
