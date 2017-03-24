@@ -1,0 +1,61 @@
+
+//	Fonts
+
+//	@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900&subset=latin-ext')
+
+//	@font-face
+
+//		font-family: ""
+//		src: url("font/.woff2") format("woff2"), url("font/.woff") format("woff")
+
+
+
+//	Media Queries
+//	Compiles in the same order as declared here by the combiner plugin.
+
+$screen-small: 640px
+$screen-medium: 900px
+$screen-large: 1200
+
+// <--  0       mobile     639  -->
+// <--  640     small      899  -->
+// <--  900     medium     1199  ->
+// <--  1200+   large
+
+=sm
+	@media (min-width: $screen-small)
+		@content
+
+=md
+	@media (min-width: $screen-medium)
+		@content
+
+=lg
+	@media (min-width: $screen-large)
+		@content
+
+=mbMax
+	@media (max-width: ($screen-small - 1))
+		@content
+
+=smMax
+	@media (max-width: ($screen-medium - 1))
+		@content
+
+=mdMax
+	@media (max-width: ($screen-large - 1))
+		@content
+
+
+
+// Default Styles
+
+$primary-colour: #e20091
+$primary-colour-highlighted: #ff00a3
+$primary-text-colour: #555
+$primary-text-accented-colour: black
+$primary-text-colour-reversed: white
+$primary-font-family: Arial, Helvetica, sans-serif
+$primary-font-size: 16px
+$primary-font-weight: 400
+$primary-line-height: 1.25em

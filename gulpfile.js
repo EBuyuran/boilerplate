@@ -22,7 +22,7 @@ gulp.task("browserSync", function() {
 
 	browserSync.init({
 		server: {
-			baseDir: "output"
+			baseDir: "dist"
 		},
 	})
 
@@ -30,32 +30,48 @@ gulp.task("browserSync", function() {
 
 gulp.task("sass", function() {
 
-	return gulp.src("input/style/**/*.+(scss|sass)")
+	return gulp.src("build/style/**/*.+(scss|sass)")
 
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write("/"))
-		.pipe(gulp.dest("output/style"))
-		.pipe(browserSync.reload({
-			stream: true
-		}))
+		.pipe(gulp.dest("dist/style"))
+
+});
+
+gulp.task("reloadStyles", function(callback) {
+
+	runSequence("sass", "pug", "reload", callback);
+	// pug is ran to include above the fold css in headers
 
 });
 
 // Sourcemap Mapping Sample
 // ------------------------
 // http://localhost:3000/source/
-// /input/style/
+// /build/style/
 
 gulp.task("pug", function() {
 
-	return gulp.src("input/*.pug")
+	return gulp.src("build/*.pug")
 
 		.pipe(pug({
 			pretty: true
 		}))
-		.pipe(gulp.dest("output"))
+		.pipe(gulp.dest("dist"))
+		.pipe(browserSync.reload({
+			stream: true
+		}))
+
+});
+
+gulp.task("concat", function() {
+
+	return gulp.src("build/script/*.js")
+
+		.pipe(concat("main.js"))
+		.pipe(gulp.dest("dist/script"))
 		.pipe(browserSync.reload({
 			stream: true
 		}))
@@ -64,31 +80,19 @@ gulp.task("pug", function() {
 
 gulp.task("compress", function() {
 
-	return gulp.src("input/*.pug")
+	return gulp.src("build/*.pug")
 
 		.pipe(pug())
-		.pipe(gulp.dest("output"))
-
-});
-
-gulp.task("concat", function() {
-
-	return gulp.src("input/script/*.js")
-
-		.pipe(concat("main.js"))
-		.pipe(gulp.dest("output/script"))
-		.pipe(browserSync.reload({
-			stream: true
-		}))
+		.pipe(gulp.dest("dist"))
 
 });
 
 gulp.task("uglify", function(cb) {
 
 	pump([
-		gulp.src("output/script/*.js"),
+		gulp.src("dist/script/*.js"),
 		uglify(),
-		gulp.dest("output/script/")
+		gulp.dest("dist/script/")
 	],
 		cb
 	);
@@ -97,39 +101,39 @@ gulp.task("uglify", function(cb) {
 
 gulp.task("combine", function () {
 
-	return gulp.src("output/style/*.css")
+	return gulp.src("dist/style/*.css")
 
 		.pipe(combineMq({
 			beautify: true
 		}))
 
-		.pipe(gulp.dest("output/style/"));
+		.pipe(gulp.dest("dist/style/"));
 
 });
 
 gulp.task('uncss', function() {
 
-	return gulp.src("output/style/*.css")
+	return gulp.src("dist/style/*.css")
 
 		.pipe(uncss({
-			html: ["output/*.html"]
+			html: ["dist/*.html"]
 		}))
-		.pipe(gulp.dest("output/style/"));
+		.pipe(gulp.dest("dist/style/"));
 
 });
 
 gulp.task("minify", function() {
 
-	return gulp.src("output/style/*.css")
+	return gulp.src("dist/style/*.css")
 
 		.pipe(cleanCSS())
-		.pipe(gulp.dest("output/style/"))
+		.pipe(gulp.dest("dist/style/"))
 
 });
 
-gulp.task("optimise", function(){
+gulp.task("optimise", function() {
 
-	return gulp.src("output/img/**/*.+(png|jpg|jpeg|gif)")
+	return gulp.src("dist/img/**/*.+(png|jpg|jpeg|gif)")
 
 	// Caching images that ran through imagemin
 
@@ -137,16 +141,22 @@ gulp.task("optimise", function(){
 		interlaced: true
 	})))
 
-	.pipe(gulp.dest("output/img/"))
+	.pipe(gulp.dest("dist/img/"))
 
 });
 
-gulp.task("tinify", function(){
+gulp.task("tinify", function() {
 
-	return gulp.src("output/img/**/*.+(png|jpg|jpeg)")
+	return gulp.src("dist/img/**/*.+(png|jpg|jpeg)")
 
 	.pipe(cache(tinify("87P5426kKBE9JTn3dUXTvvF7o5-eoSzF")))
-	.pipe(gulp.dest("output/img/"))
+	.pipe(gulp.dest("dist/img/"))
+
+});
+
+gulp.task("reload", function (){
+
+	browserSync.reload();
 
 });
 
@@ -154,16 +164,21 @@ gulp.task("tinify", function(){
 
 
 
-gulp.task("final", function(callback) {
 
-	runSequence("uncss", "combine", "minify", ["compress", "uglify"], callback);
+
+
+
+
+gulp.task("default", ["build"], function() {
+
+	gulp.watch("build/**/*.pug", ["pug"]);
+	gulp.watch("build/style/**/*.+(scss|sass)", ["reloadStyles"]);
+	gulp.watch("build/script/**/*.js", ["concat"]);
 
 });
 
-gulp.task("go", ["browserSync", "pug", "sass", "concat"], function(){
+gulp.task("build", function(callback) {
 
-	gulp.watch("input/**/*.pug", ["pug"]);
-	gulp.watch("input/style/**/*.+(scss|sass)", ["sass"]);
-	gulp.watch("input/script/**/*.js", ["concat"]); 
+	runSequence(["pug", "sass", "concat"], "browserSync", callback);
 
 });

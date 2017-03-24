@@ -1,0 +1,196 @@
+
+*, *:before, *:after
+
+	box-sizing: inherit
+	outline: none
+
+body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video
+
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section 
+
+	display: block
+
+body
+
+	margin: 100px
+
+	color: $primary-text-colour
+
+	font-family: $primary-font-family
+	font-size: $primary-font-size
+	font-weight: $primary-font-weight
+
+	line-height: 1
+
+	box-sizing: border-box
+
+h1, h2, h3, h4, h5, h6
+
+	line-height: 1.25em
+	margin: 1em 0
+
+h1
+
+	font-size: 2.25em
+	font-weight: 700
+
+h2
+
+	font-size: 2em
+	font-weight: 700
+
+h3
+
+	font-size: 1.7em
+	font-weight: 700
+
+h4
+
+	font-size: 1.5em
+	font-weight: 700
+
+h5
+
+	font-size: 1.3em
+	font-weight: 400
+
+h6
+
+	font-size: 1.125em
+	font-weight: 400
+
+p
+
+	line-height: 1.25em
+	margin: 1.4em 0
+
+a
+
+	color: $primary-colour
+	text-decoration: none
+
+	&:hover
+
+		color: $primary-colour-highlighted
+		text-decoration: underline
+
+a.button, button
+
+	display: block
+	float: left
+	clear: left
+
+	padding: 0.75em 1.5em
+
+	border-radius: 0.25em
+	border: 1px solid transparent
+
+	background: $primary-colour
+
+	font-size: 0.85em
+	line-height: 1em
+	color: $primary-text-colour-reversed
+	text-decoration: none
+
+	user-select: none
+	cursor: pointer
+
+	&:hover
+
+		background: $primary-colour-highlighted
+
+	&.shadowlink
+
+		background: none
+		color: $primary-colour
+		border: 1px solid $primary-colour
+
+		&:hover
+
+			color: $primary-text-colour-reversed
+			background: $primary-colour
+
+em
+
+	font-style: italic
+
+strong
+
+	font-weight: 700
+
+.accented
+
+	color: $primary-text-accented-colour
+
+.marked
+
+	color: $primary-text-accented-colour
+	font-weight: 700
+	text-decoration: underline
+
+.crossed
+
+	text-decoration: line-through
+
+.highlighted
+
+	border-radius: 0.25em
+	padding: 0.1em 0.4em
+	background: $primary-colour
+	color: $primary-text-colour-reversed
+
+ol, ul
+
+	list-style: none
+
+	margin: 24px 0
+
+.listed, .listed
+
+	margin: 24px 0 24px 16px
+	padding-left: 24px
+
+ul.listed
+
+	list-style: disc
+
+ol.listed
+
+	list-style: decimal
+
+li
+
+	margin: 8px 0
+
+blockquote, q
+
+	quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+
+	content: ''
+	content: none
+
+table
+
+	border-collapse: collapse
+	border-spacing: 0
+
+.clearfix:after
+
+	content: ""
+	display: table
+	clear: both
+
+//	Page Layouts
+
+.row
+
+.container

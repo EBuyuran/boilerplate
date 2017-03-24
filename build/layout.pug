@@ -1,0 +1,42 @@
+include puglib/variables.pug
+
+doctype html
+
+html(lang="en")
+
+	head
+
+		include puglib/head.pug
+
+	body
+
+		include puglib/header.pug
+
+		h1 This is test heading. This is test heading. This is test heading. This is test heading. This is test heading.
+
+		h2 This is test heading. This is test heading. This is test heading. This is test heading. This is test heading.
+
+		h3 This is test heading. This is test heading. This is test heading. This is test heading. This is test heading.
+
+		h4 This is test heading. This is test heading. This is test heading. This is test heading. This is test heading.
+
+		h5 This is test heading. This is test heading. This is test heading. This is test heading. This is test heading.
+
+		h6 This is test heading. This is test heading. This is test heading. This is test heading. This is test heading.
+
+		p This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. This is a paragraph. 
+
+		ul.listed
+
+			li Salt
+			li Sugar
+			li Pepper
+
+		p.
+
+			Lorem ipsum dolor sit amet, #[a(href=voidlink) default link] adipiscing elit. Praesent #[em italic] porta augue, quis suscipit dolor hendrerit sit amet. Mauris eu lorem ut magna #[strong strong] accumsan. Bold text dolor sit amet, consectetur accent color #[span.highlighted highlighted] elit, hovered accents sed do eiusmod tempor hovered ut labore et dolore #[span.crossed crossed] aliqua. Ut enim ad minim veniam, quis nostrud #[span.marked marked] ullamco laboris nisi ut aliquip ex ea dafault link color consequat. Duis aute dolor in reprehenderit in #[span.accented accented] cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+		a.button(href=voidlink) Submit
+
+		include puglib/footer.pug
+		include puglib/bottom.pug
